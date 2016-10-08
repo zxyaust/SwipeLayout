@@ -2,8 +2,11 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "23.0.3"
+    lintOptions {
 
+        abortOnError false
+    }
     defaultConfig {
         applicationId "com.z.max.swipe"
         minSdkVersion 15
