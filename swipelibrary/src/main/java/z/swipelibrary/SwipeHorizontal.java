@@ -193,7 +193,6 @@ public class SwipeHorizontal extends FrameLayout {
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             super.onViewReleased(releasedChild, xvel, yvel);
-            System.out.println("之前结果" + isLeftOpen + ":" + isRrightOpen + middeViewDragedx + ":" + wLeft / 2);
             if (xvel >= SPEED_LIMIT) {
                 if (isRrightOpen) {//右边拉开的,那就关闭
                     close();
@@ -279,7 +278,6 @@ public class SwipeHorizontal extends FrameLayout {
                     openRight();
                 }
             }
-            System.out.println("后面结果" + "速度" + xvel + isLeftOpen + ":" + isRrightOpen + middeViewDragedx + ":" + wLeft / 2);
         }
 
     }

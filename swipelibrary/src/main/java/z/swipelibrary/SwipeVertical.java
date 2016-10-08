@@ -142,7 +142,6 @@ public class SwipeVertical extends FrameLayout {
         public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
             if (changedView == middleView) {
                 middeViewDragedy = top;
-//                System.out.println("已经拉动的距离" + middeViewDragedy);
                 topView.offsetTopAndBottom(dy);
                 bottomView.offsetTopAndBottom(dy);
             } else if (changedView == topView) {
@@ -191,8 +190,6 @@ public class SwipeVertical extends FrameLayout {
 
         @Override
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
-//            super.onViewReleased(releasedChild, xvel, yvel);
-//            System.out.println("之前结果" + isTopOpen + ":" + isBottomOpen + middeViewDragedy + ":" + hTop / 2);
             if (yvel >= SPEED_LIMIT) {
                 if (isBottomOpen) {//右边拉开的,那就关闭
                     close();
@@ -279,7 +276,6 @@ public class SwipeVertical extends FrameLayout {
                     openBottom();
                 }
             }
-//            System.out.println("后面结果" + "速度" + yvel + isTopOpen + ":" + isBottomOpen + middeViewDragedy + ":" + hTop / 2);
         }
 
     }
