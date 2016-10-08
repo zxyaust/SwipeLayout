@@ -4,7 +4,7 @@
 
 ---
 #说明:
-可以实现横向的双向滑动和纵向的竖向滑动
+可以实现横向的双向滑动和纵向的竖向滑动,使用非常方便,只需要在布局中指定leftview,contentview和rightview即可实现左右滑动效果,使用起来跟普通控件一样简单.
 ![此处输入图片的描述][1]
 #1.用法
 ##1.引用
@@ -12,9 +12,12 @@
  compile 'com.z:SwipeLayout:1.0.0'
 ```
 ##2.布局中使用
+该控件继承自framlayout,必须要有三个自布局,一个是左边view,一个是中间view一个是右边view,使用中要指定view的id,自布局不用区分先后顺序.
 注意一下三个属性的设置:
         app_contentView_id="@+id/middle"
+        
         app_leftView_id="@+id/left"
+        
         app_rightView_id="@+id/right"
 ```
 <--如果用实现竖向的双向滑动,要用SwipeVertical布局即可-->
