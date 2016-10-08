@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:background="#007"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="#00f"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00f"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <com.z.max.swipe.test.BothSideSwipeHorizontal1
+        android:id="@+id/swiper"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        app:app_contentView_id="@+id/middle"
+        app:app_leftView_id="@+id/left"
+        app:app_rightView_id="@+id/right">
+
+        <LinearLayout
+            android:id="@id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dismiss"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="#0f0"
+                android:text="left12345678901234" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="#ff0"
+                android:text="left12345678901234" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/middle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="#500f"
+                android:text="content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#00f"
+                android:text="content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@id/right"
+            android:layout_width="200dp"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="#5f00"
+                android:text="right12345678901234" />
+
+            <TextView
+
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="#f00"
+                android:text="right12345678901234" />
+
+        </LinearLayout>
+    </com.z.max.swipe.test.BothSideSwipeHorizontal1>
+</LinearLayout>

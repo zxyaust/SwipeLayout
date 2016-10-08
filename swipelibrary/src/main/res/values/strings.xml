@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SwipeLibrary</string>
+    <string name="exception_no_field">you must give these three fields:app_leftView_id,app_contentView_id and app_rightView_id</string>
+    <string name="error_string">you must give three child view,if not ,there will be something wrong!</string>
+</resources>

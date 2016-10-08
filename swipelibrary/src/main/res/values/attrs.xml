@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwipeHorizontal">
+        <attr name="app_leftView_id" format="reference"></attr>
+        <attr name="app_rightView_id" format="reference"></attr>
+        <attr name="app_contentView_id" format="reference"></attr>
+    </declare-styleable>
+    <declare-styleable name="SwipeVertical">
+        <attr name="app_TopView_id" format="reference"></attr>
+        <attr name="app_BottomView_id" format="reference"></attr>
+        <attr name="app_MiddleView_id" format="reference"></attr>
+    </declare-styleable>
+</resources>
