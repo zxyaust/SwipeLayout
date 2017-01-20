@@ -1,10 +1,14 @@
 package z.swipelibrary;
 
+import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.zhy.adapter.recyclerview.CommonAdapter;
@@ -121,10 +125,12 @@ public class PullLayout extends RelativeLayout {
                 if (isRefreshOrLoadmore) {
                     if (dy < 0)
                         break;
-                    rv.setTop((int) (rvtop + dy));
-                    rv.setBottom((int) (rvBottom + dy));
-                    refresherView.setTop((int) dy + refresherViewTop);
-                    refresherView.setBottom((int) (refresherViewBottom + dy));
+                    rv.setTranslationY(dy);
+                    refresherView.setTranslationY(dy);
+//                    rv.setTop((int) (rvtop + dy));
+//                    rv.setBottom((int) (rvBottom + dy));
+//                    refresherView.setTop((int) dy + refresherViewTop);
+//                    refresherView.setBottom((int) (refresherViewBottom + dy));
 //                    }
                 } else {
                     if (dy > 0)
@@ -159,13 +165,15 @@ public class PullLayout extends RelativeLayout {
         updateState();
         switch (mState) {
             case REFRESH_STATE_RELEASE_TO_INIT:
-                if (loaderView.getTop() != loaderViewTop) {
-                    rv.setTop(rvtop);
-                    rv.setBottom(rvBottom);
-                    loaderView.setBottom(loaderViewBottom);
-                    loaderView.setTop(loaderViewTop);
-                }
-                close(0);
+                smoothTo(rv,0);
+                smoothTo(loaderView,0);
+//                if (loaderView.getTop() != loaderViewTop) {
+//                    rv.setTop(rvtop);
+//                    rv.setBottom(rvBottom);
+//                    loaderView.setBottom(loaderViewBottom);
+//                    loaderView.setTop(loaderViewTop);
+//                }
+//                close(0);
                 break;
             case REFRESH_STATE_RELEASE_TO_REFRESHING:
                 close((int) limitRefreshHeight);
@@ -277,7 +285,18 @@ public class PullLayout extends RelativeLayout {
         });
     }
 
-
+    private void smoothBy(View view, float offset) {
+        float translationY = view.getTranslationY();
+        ObjectAnimator.ofFloat(view, "translationY", translationY, translationY + offset).
+                setDuration(delayMillis)
+                .start();
+    }
+    private void smoothTo(View view, float newTranslationY) {
+        float translationY = view.getTranslationY();
+        ObjectAnimator.ofFloat(view, "translationY", translationY, newTranslationY).
+                setDuration(delayMillis)//时间2秒
+                .start();//开始
+    }
     private void updateState() {
         if (oldState != mState) {
             loaderView.onStateChage(mState);//最后调用这个

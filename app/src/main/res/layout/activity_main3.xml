@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <z.swipelibrary.PullLayout
+        android:id="@+id/pulllay"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="#333">
@@ -44,4 +45,11 @@
             android:layout_alignParentTop="true"
             android:background="#6f0f" />
     </z.swipelibrary.PullLayout>
+    <TextView
+        android:layout_marginTop="300dp"
+        android:id="@+id/tv1"
+        android:text="嘻嘻"
+        android:layout_marginLeft="30dp"
+        android:layout_width="50dp"
+        android:layout_height="30dp" />
 </RelativeLayout>
