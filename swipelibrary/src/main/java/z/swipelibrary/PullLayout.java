@@ -92,7 +92,7 @@ public class PullLayout extends RelativeLayout {
                     break;
                 case MotionEvent.ACTION_MOVE:
                     float dy = ev.getY() - yDown;
-                    if (dy > 0) {
+                    if (dy > 0) {//向下拉
                         isRefreshOrLoadmore = true;
                         return true;//第一个条目完全可见,并且向下拉动
                     }

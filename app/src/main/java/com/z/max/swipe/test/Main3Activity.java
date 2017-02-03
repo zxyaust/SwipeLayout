@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.z.max.swipe.R;
 
 import z.swipelibrary.PullLayout;
+import z.swipelibrary.PullLayout1;
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class Main3Activity extends AppCompatActivity {
     private RecyclerView mRvRecyclerView;
     private RelativeLayout mActivityMain3RelativeLayout;
     private PullLayout mPullPullLayout;
-    private PullLayout mPulllayPullLayout;
+    private PullLayout1 mPulllayPullLayout;
     private TextView mTv1TextView;
     private boolean flag;
     private int i;
@@ -28,23 +29,23 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        mTvTextView = (TextView) findViewById(R.id.tv);
+//        mTvTextView = (TextView) findViewById(R.id.tv);
         mRvRecyclerView = (RecyclerView) findViewById(R.id.rv);
-        mPulllayPullLayout = (PullLayout) findViewById(R.id.pulllay);
-        mTv1TextView = (TextView) findViewById(R.id.tv1);
+        mPulllayPullLayout = (PullLayout1) findViewById(R.id.pulllay);
+//        mTv1TextView = (TextView) findViewById(R.id.tv1);
         mActivityMain3RelativeLayout = (RelativeLayout) findViewById(R.id.activity_main3);
 
         i = 0;
-        mTv1TextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                i = i + 50;
-                if (i > 150) {
-                    smoothTo(mTv1TextView, 0);
-                } else
-                    smoothTo(mTv1TextView, i);
-            }
-        });
+//        mTv1TextView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                i = i + 50;
+//                if (i > 150) {
+//                    smoothTo(mTv1TextView, 0);
+//                } else
+//                    smoothTo(mTv1TextView, i);
+//            }
+//        });
 
     }
 
